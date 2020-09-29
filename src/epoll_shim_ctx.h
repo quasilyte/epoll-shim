@@ -1,7 +1,11 @@
 #ifndef EPOLL_SHIM_CTX_H_
 #define EPOLL_SHIM_CTX_H_
 
-#include <sys/tree.h>
+#ifndef __APPLE__
+#  include <sys/tree.h>
+#else
+#  include "darwin_sys_tree.h"
+#endif
 
 #include <unistd.h>
 

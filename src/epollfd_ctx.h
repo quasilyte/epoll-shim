@@ -5,7 +5,12 @@
 #include <sys/epoll.h>
 
 #include <sys/queue.h>
-#include <sys/tree.h>
+
+#ifndef __APPLE__
+#  include <sys/tree.h>
+#else
+#  include "darwin_sys_tree.h"
+#endif
 
 #include <stdbool.h>
 #include <stdint.h>
